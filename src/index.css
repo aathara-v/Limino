@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply m-0 p-0 overflow-hidden bg-black text-zinc-900 select-none overscroll-none;
+    /* AMOLED dark mode base */
+    @media (prefers-color-scheme: dark) {
+      @apply bg-black text-zinc-100;
+    }
+  }
+
+  /* Prevent text selection and disable default touch actions for custom gestures */
+  * {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: pan-y;
+  }
+  
+  /* Hide scrollbar for a native look */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
